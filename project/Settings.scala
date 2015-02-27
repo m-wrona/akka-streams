@@ -6,7 +6,7 @@ import Keys._
  */
 object BuildSettings {
 
-  val buildOrganization = "com.mwronski.hurricane"
+  val buildOrganization = "com.mwronski.streams"
   val buildVersion = "0.0.1"
   val buildScalaVersion = "2.10.4"
 

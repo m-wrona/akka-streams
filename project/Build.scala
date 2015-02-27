@@ -8,18 +8,18 @@ object ProjectBuild extends Build {
 
   private val depCompileTest = "compile->compile;test->test"
 
-  lazy val hurricane = Project(
-    "hurricane",
+  lazy val project = Project(
+    "akka-streams",
     file("."),
     settings = buildSettings
   ) aggregate (
-    moduleCore
+    moduleStreams
     )
 
-  lazy val moduleCore = Project(
-    "hurricane-core",
-    file("core"),
-    settings = moduleSettings("hurricane.core") ++
+  lazy val moduleStreams = Project(
+    "streams",
+    file("streams"),
+    settings = moduleSettings("streams") ++
       Seq(
         resolvers := projectResolvers,
         libraryDependencies ++= (
@@ -28,6 +28,5 @@ object ProjectBuild extends Build {
           )
       )
   )
-
 
 }
