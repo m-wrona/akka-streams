@@ -1,7 +1,6 @@
 package com.mwronski.streams
 
 import akka.actor.ActorSystem
-import akka.stream.javadsl.FlattenStrategy
 import akka.stream.{ ActorFlowMaterializer}
 import akka.stream.scaladsl._
 import akka.stream.scaladsl.Source
@@ -16,7 +15,6 @@ object SortedStream {
 
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem("Sys")
-    import system.dispatcher
     implicit val materializer = ActorFlowMaterializer()
 
     val g = FlowGraph { implicit b =>
