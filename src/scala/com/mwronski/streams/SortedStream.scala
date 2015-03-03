@@ -29,7 +29,7 @@ object SortedStream {
 
       val sort = Flow[Int].
         grouped(10).
-        map(_.sorted.reverse).
+        map(_.sorted.reverse)
       val out = Sink.foreach(println _)
 
       inOdd ~> merge
