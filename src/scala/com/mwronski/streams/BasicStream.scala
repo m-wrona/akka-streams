@@ -5,6 +5,8 @@ import akka.stream.ActorFlowMaterializer
 import akka.stream.scaladsl.Source
 
 /**
+ * Basic streams handling simple text source
+ *
  * @author Michal Wronski
  */
 object BasicStream {
@@ -25,11 +27,6 @@ object BasicStream {
       map(_.toUpperCase).
       runForeach(println).
       onComplete(_ => system.shutdown())
-
-    // could also use .runWith(ForeachSink(println)) instead of .foreach(println) above
-    // as it is shorthand for the same thing. Sinks may be constructed elsewhere and plugged
-    // in like this. Note also that foreach returns a future (in either form) which may be
-    // used to attach lifecycle events to, like here with the onComplete.
   }
 
 
